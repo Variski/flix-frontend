@@ -1,17 +1,66 @@
-# React + Vite
+# FLIX Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyek ini adalah bagian frontend dari aplikasi **FLIX** (movie recommendation & social discussion hub). Proyek ini dibangun menggunakan modern toolchain fast-refresh dan styling library berbasis komponen.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Berikut adalah teknologi utama yang digunakan di sisi frontend:
 
-## React Compiler
+- **Framework**: [React](https://react.dev/) (dengan JSX/JS)
+- **Build Tool**: [Vite](https://vitejs.dev/) - untuk environment development yang super cepat dan build tool yang efisien.
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) - Utility-first CSS framework (diintegrasikan secara natif dengan Vite plugin).
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/) - Koleksi komponen UI siap pakai yang dibangun di atas Radix UI dan Tailwind CSS.
+- **Iconography**: [Lucide React](https://lucide.dev/)
+- **Routing**: *[Akan ditambahkan misal: React Router]*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Cara Instalasi & Menjalankan Project
 
-## Expanding the ESLint configuration
+Ikuti langkah-langkah di bawah ini untuk menjalankan project frontend ini di komputer lokal kamu.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# flix-frontend
+### Prasyarat:
+Pastikan kamu telah menginstal:
+- **Node.js** (versi 18+ direkomendasikan)
+- **npm** (Node Package Manager)
+
+### Langkah-langkah:
+
+1. **Clone repositori** (jika belum):
+   ```bash
+   git clone <url-repo-kalian>
+   ```
+
+2. **Masuk ke folder frontend**:
+   Pastikan kamu berada di dalam direktori `frontend`.
+   ```bash
+   cd final_project/frontend
+   ```
+
+3. **Install dependensi (Package)**:
+   Jalankan perintah berikut untuk menginstal semua library yang dibutuhkan (React, Tailwind, komponen shadcn, dll).
+   ```bash
+   npm install
+   ```
+
+4. **Jalankan Development Server**:
+   Setelah instalasi selesai, jalankan server lokal Vite.
+   ```bash
+   npm run dev
+   ```
+
+5. **Buka di Browser**:
+   Buka browser kamu dan akses alamat berikut:
+   **[http://localhost:5173/](http://localhost:5173/)**
+
+## 🧩 Struktur Folder Utama
+
+- `src/components/ui/` - Berisi berbagai komponen shadcn/ui (misal: button, card, dll) yang bisa digunakan ulang (*reusable*).
+- `src/lib/utils.js` - Helper utility (misalnya `cn` function wajib untuk shadcn).
+- `src/index.css` - File CSS global tempat konfigurasi Tailwind v4 dan variabel tema shadcn didefinisikan secara dinamis (`@theme`).
+
+## 👨‍💻 Menambahkan Komponen UI Baru (shadcn/ui)
+
+Jika kamu ingin menambahkan komponen baru dari shadcn, cukup gunakan CLI di terminal (pastikan berada di folder `frontend`):
+```bash
+npx shadcn@latest add <nama-komponen>
+```
+Contoh: `npx shadcn@latest add input`
