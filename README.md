@@ -56,7 +56,7 @@ Frontend ini menggunakan arsitektur **Feature-Slicing** yang disejajarkan (*alig
 
 ### Struktur Direktori:
 
-
+```text
 frontend/src/
 ├── assets/           # Gambar, logo, icon, dan aset statis lainnya
 ├── lib/              # Utility global (contoh: setup axios client, helper formatting)
@@ -86,6 +86,7 @@ frontend/src/
 ├── index.css         # CSS global (Konfigurasi Tailwind v4 & tema shadcn)
 ├── App.jsx           # Entry Component & (TODO: React Router Setup)
 └── main.jsx          # Titik mount React ke HTML
+```
 
 ### Konvensi dan Aturan Tim (Frontend)
 1. **Komponen Reusable (ui/)**: Komponen spesifik fitur (seperti `MovieCard`) **jangan** ditaruh di dalam `/components/ui/`. Folder `ui/` hanya untuk *building block* generik seperti Button, Input, dll.
