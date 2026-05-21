@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -8,8 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Film, Star, Tv2 } from "lucide-react"
-import Navbar from "./components/common/navbar"
-import Footer from "./components/common/footer"
+import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
+import HomePage from "@/pages/home/HomePage"
+import LoginPage from "@/pages/auth/LoginPage"
   
 function App() {
   return (
@@ -17,11 +20,11 @@ function App() {
       <Navbar />
 
       {/* Content placeholder */}
-      <main className="flex-1 max-w-6xl mx-auto p-4">
-        <h1 className="text-2xl font-bold">Flix App</h1>
-        <p className="text-gray-600 mt-2">
-          Start building your movie recommendation UI here...
-        </p>
+      <main className="flex-1 max-w-6xl w-full mx-auto p-4">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
       </main>
 
       <Footer />

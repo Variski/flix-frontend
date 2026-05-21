@@ -13,6 +13,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { Search, Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -47,16 +48,16 @@ export default function Navbar() {
       <div className="px-4 h-16 flex items-center justify-between mr-5 ml-5">
         {/* Logo */}
         <div className="text-xl font-bold">
-          <a href="#">
+          <Link to="/">
             Flix<span className="text-red-500">.</span>
-          </a>
+          </Link>
         </div>
 
         {/* MENU DESKTOP */}
         <div className="hidden md:flex gap-6 text-md absolute left-1/2 -translate-x-1/2 font-semibold">
-          <a href="#" className="hover:text-red-500">
+          <Link to="/" className="hover:text-red-500">
             Home
-          </a>
+          </Link>
 
           <a href="#" className="hover:text-red-500">
             Movies
@@ -138,7 +139,7 @@ export default function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="hover:bg-red-100 hover:text-red-500"
+                className="bg-gray-300 hover:bg-red-100 hover:text-red-500"
               >
                 <Search className="w-5 h-5" />
               </Button>
@@ -152,9 +153,11 @@ export default function Navbar() {
 
           {/* ACTION DESKTOP */}
           <div className="hidden md:flex gap-2">
-            <Button variant="ghost" className="hover:text-red-500">
-              Login
-            </Button>
+            <Link to="/login">
+              <Button variant="ghost" className="hover:text-red-500">
+                Login
+              </Button>
+            </Link>
 
             <Button className="bg-red-500 text-white hover:bg-red-600">
               Sign Up
@@ -176,9 +179,9 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {openMenu && (
         <div className="md:hidden flex flex-col gap-4 px-6 py-4 border-t bg-white">
-          <a href="#" className="hover:text-red-500">
+          <Link to="/" className="hover:text-red-500" onClick={() => setOpenMenu(false)}>
             Home
-          </a>
+          </Link>
 
           <a href="#" className="hover:text-red-500">
             Movies
@@ -197,9 +200,11 @@ export default function Navbar() {
           </a>
 
           <div className="flex gap-2 pt-2">
-            <Button variant="ghost" className="w-full hover:text-red-500">
-              Login
-            </Button>
+            <Link to="/login" className="w-full">
+              <Button variant="ghost" className="w-full hover:text-red-500">
+                Login
+              </Button>
+            </Link>
 
             <Button className="w-full bg-red-500 text-white hover:bg-red-600">
               Sign Up
