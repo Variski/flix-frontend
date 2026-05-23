@@ -22,8 +22,8 @@ export function RegisterForm() {
 
       if (!res.ok) throw new Error("Registration failed");
 
-      const data = await res.json();
-      localStorage.setItem("token", data.token);
+      const json = await res.json();
+      localStorage.setItem("token", json.data.token);
       navigate("/");
       window.location.reload();
     } catch (err) {
