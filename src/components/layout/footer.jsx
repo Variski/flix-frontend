@@ -1,21 +1,21 @@
 export default function Footer() {
   return (
-    <footer className="border-t mt-10">
+    <footer className="border-t border-zinc-800 mt-10">
       <div className="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between gap-6">
         {/* Brand */}
         <div>
           <h1 className="text-lg font-bold">
             Flix<span className="text-red-500">.</span>
           </h1>
-          <p className="text-sm text-gray-500 mt-2">
+          <p className="text-sm text-zinc-500 mt-2">
             Your simple movie recommendation platform
           </p>
         </div>
 
         {/* Links */}
-        <div className="flex gap-10 text-sm text-gray-600">
+        <div className="flex gap-10 text-sm text-zinc-400">
           <div className="space-y-2">
-            <p className="font-medium text-black">Explore</p>
+            <p className="font-medium text-white">Explore</p>
             <a href="/">
               Movies <br />
             </a>
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-2">
-            <p className="font-medium text-black">Company</p>
+            <p className="font-medium text-white">Company</p>
             <a href="/">
               About <br />{" "}
             </a>
@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="text-center text-xs text-gray-400 py-4 border-t">
+      <div className="text-center text-xs text-zinc-500 py-4 border-t border-zinc-800">
         © {new Date().getFullYear()} Flix. All rights reserved.
       </div>
     </footer>

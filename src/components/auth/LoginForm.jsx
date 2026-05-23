@@ -33,35 +33,41 @@ export function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      {error && <p className="text-red-500">{error}</p>}
+      {error && (
+        <p className="text-red-400 bg-red-500/10 border border-red-500/20 rounded-lg px-3 py-2 text-sm">
+          {error}
+        </p>
+      )}
 
       <div>
-        <label className="block text-sm">Email</label>
+        <label className="block text-sm text-zinc-300 mb-1">Email</label>
         <input
           type="email"
           name="email"
           value={form.email}
           onChange={handleChange}
-          className="w-full px-3 py-2 border rounded"
+          className="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition"
+          placeholder="you@example.com"
           required
         />
       </div>
 
       <div>
-        <label className="block text-sm">Password</label>
+        <label className="block text-sm text-zinc-300 mb-1">Password</label>
         <input
           type="password"
           name="password"
           value={form.password}
           onChange={handleChange}
-          className="w-full px-3 py-2 border rounded"
+          className="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-zinc-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition"
+          placeholder="••••••••"
           required
         />
       </div>
 
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        className="w-full bg-red-500 text-white py-2.5 rounded-lg font-semibold hover:bg-red-600 transition-colors cursor-pointer"
       >
         Login
       </button>

@@ -1,10 +1,18 @@
+import { Button } from "@/components/ui/button";
+
 export default function HomePage() {
   return (
     <div>
       <h1 className="text-2xl font-bold">Flix App</h1>
-      <p className="text-gray-600 mt-2">
-        Start building your movie recommendation UI here...
-      </p>
+      <Button variant="default">Default</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="destructive">Destructive</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="link">Link</Button>
+      <Button variant="outline" size="lg">
+        Large
+      </Button>
     </div>
   );
 }

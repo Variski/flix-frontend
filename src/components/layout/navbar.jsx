@@ -44,17 +44,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full shadow-md bg-white sticky top-0 z-50">
+    <nav className="w-full shadow-md bg-zinc-950 border-b border-zinc-800 sticky top-0 z-50">
       <div className="px-4 h-16 flex items-center justify-between mr-5 ml-5">
         {/* Logo */}
-        <div className="text-xl font-bold">
+        <div className="text-xl font-bold text-white">
           <Link to="/">
             Flix<span className="text-red-500">.</span>
           </Link>
         </div>
 
         {/* MENU DESKTOP */}
-        <div className="hidden md:flex gap-6 text-md absolute left-1/2 -translate-x-1/2 font-semibold">
+        <div className="hidden md:flex gap-6 text-md absolute left-1/2 -translate-x-1/2 font-semibold text-zinc-300">
           <Link to="/" className="hover:text-red-500">
             Home
           </Link>
@@ -73,23 +73,23 @@ export default function Navbar() {
               <button className="hover:text-red-500">Genres</button>
             </DropdownMenuTrigger>
 
-            <DropdownMenuContent className="w-[420px] p-4 rounded-xl shadow-xl bg-white">
+            <DropdownMenuContent className="w-[420px] p-4 rounded-xl shadow-xl bg-zinc-900 border border-zinc-800">
               {/* GENRES */}
               <div className="mb-4">
-                <p className="text-sm font-semibold text-gray-500 mb-2">
+                <p className="text-sm font-semibold text-zinc-400 mb-2">
                   Browse by Genre
                 </p>
 
                 <div className="grid grid-cols-3 gap-2">
                   {genres.genres.length === 0 ? (
-                    <p className="text-sm text-gray-400 col-span-3">
+                    <p className="text-sm text-zinc-500 col-span-3">
                       Loading...
                     </p>
                   ) : (
                     genres.genres.map((genre) => (
                       <div
                         key={genre.id}
-                        className="cursor-pointer px-2 py-1 rounded-md hover:bg-red-100 hover:text-red-500 transition text-sm"
+                        className="cursor-pointer px-2 py-1 rounded-md hover:bg-red-500/20 hover:text-red-400 transition text-sm text-zinc-300"
                         onClick={() => console.log("Genre:", genre.name)}
                       >
                         {genre.name}
@@ -101,20 +101,20 @@ export default function Navbar() {
 
               {/* MOODS */}
               <div>
-                <p className="text-sm font-semibold text-gray-500 mb-2">
+                <p className="text-sm font-semibold text-zinc-400 mb-2">
                   Browse by Mood
                 </p>
 
                 <div className="grid grid-cols-2 gap-2">
                   {genres.moods.length === 0 ? (
-                    <p className="text-sm text-gray-400 col-span-2">
+                    <p className="text-sm text-zinc-500 col-span-2">
                       Loading...
                     </p>
                   ) : (
                     genres.moods.map((mood) => (
                       <div
                         key={mood.id}
-                        className="cursor-pointer px-2 py-1 rounded-md hover:bg-red-100 hover:text-red-500 transition text-sm"
+                        className="cursor-pointer px-2 py-1 rounded-md hover:bg-red-500/20 hover:text-red-400 transition text-sm text-zinc-300"
                         onClick={() => console.log("Mood:", mood.name)}
                       >
                         {mood.name}
@@ -139,7 +139,7 @@ export default function Navbar() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="bg-gray-300 hover:bg-red-100 hover:text-red-500"
+                className="bg-zinc-800 text-zinc-300 hover:bg-red-500/20 hover:text-red-400"
               >
                 <Search className="w-5 h-5" />
               </Button>
@@ -154,14 +154,16 @@ export default function Navbar() {
           {/* ACTION DESKTOP */}
           <div className="hidden md:flex gap-2">
             <Link to="/login">
-              <Button variant="ghost" className="hover:text-red-500">
+              <Button variant="ghost" className="text-zinc-300 hover:text-red-400">
                 Login
               </Button>
             </Link>
 
-            <Button className="bg-red-500 text-white hover:bg-red-600">
-              Sign Up
-            </Button>
+            <Link to="/register">
+              <Button className="bg-red-500 text-white hover:bg-red-600">
+                Sign Up
+              </Button>
+            </Link>
           </div>
 
           {/* BURGER MENU */}
@@ -178,7 +180,7 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {openMenu && (
-        <div className="md:hidden flex flex-col gap-4 px-6 py-4 border-t bg-white">
+        <div className="md:hidden flex flex-col gap-4 px-6 py-4 border-t border-zinc-800 bg-zinc-950 text-zinc-300">
           <Link to="/" className="hover:text-red-500" onClick={() => setOpenMenu(false)}>
             Home
           </Link>
@@ -200,15 +202,17 @@ export default function Navbar() {
           </a>
 
           <div className="flex gap-2 pt-2">
-            <Link to="/login" className="w-full">
-              <Button variant="ghost" className="w-full hover:text-red-500">
+            <Link to="/login">
+              <Button variant="ghost" className="hover:text-red-500">
                 Login
               </Button>
             </Link>
 
-            <Button className="w-full bg-red-500 text-white hover:bg-red-600">
-              Sign Up
-            </Button>
+            <Link to="/register">
+              <Button className="bg-red-500 text-white hover:bg-red-600">
+                Sign Up
+              </Button>
+            </Link>
           </div>
         </div>
       )}
@@ -253,7 +257,7 @@ function SearchPopup() {
             type="button"
             variant="outline"
             size="icon"
-            className="shrink-0 hover:bg-red-100 hover:text-red-500"
+            className="shrink-0 hover:bg-red-500/20 hover:text-red-400"
           >
             <X className="h-4 w-4" />
           </Button>
@@ -261,18 +265,18 @@ function SearchPopup() {
       </div>
 
       {/* SEARCH RESULT */}
-      <div className="max-h-[300px] overflow-y-auto flex flex-col gap-2">
+      <div className="max-h-[300px] overflow-y-auto flex flex-col gap-1 rounded-xl">
         {filteredMovies.length === 0 ? (
-          <p className="text-gray-400 text-sm">No results found</p>
+          <p className="text-zinc-500 text-sm p-2">No results found</p>
         ) : (
           filteredMovies.map((movie) => (
             <div
               key={movie.id}
-              className="p-2 rounded-md hover:bg-red-100 cursor-pointer transition"
+              className="p-2 rounded-lg hover:bg-red-500/20 cursor-pointer transition"
             >
-              <p className="font-medium">{movie.title}</p>
-              <p className="text-xs text-gray-500">{movie.genre}</p>
-            </div>
+              <p className="font-medium text-zinc-200">{movie.title}</p>
+              <p className="text-xs text-zinc-500">{movie.genre}</p>
+              </div>
           ))
         )}
       </div>
