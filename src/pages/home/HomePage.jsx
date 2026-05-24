@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 
 import Navbar from "../../components/layout/navbar";
+import Footer from "@/components/layout/footer";
 import FilterPopup from "./FilterPopup";
 
 import menegangkanIcon from "../../assets/emoticon/menegangkan-emoticon.png";
@@ -778,6 +779,8 @@ function HomePage() {
         onChange={setFilterValues}
         onClose={() => setIsFilterOpen(false)}
       />
+
+      <Footer />
     </main>
   );
 }

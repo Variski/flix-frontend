@@ -158,7 +158,7 @@ function Navbar({ mode = "absolute", activeKey }) {
             />
           </button>
 
-          {token ? (
+          {(token && token !== "undefined" && token !== "null" && user) ? (
             <>
               <Link
                 to="/community"
